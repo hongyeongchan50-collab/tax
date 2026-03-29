@@ -91,9 +91,8 @@ export default function Footer() {
 
         {/* Disclaimer */}
         <div className="mt-6 bg-[#0D1B3E]/60 rounded-sm px-5 py-4">
-          <p className="text-[10px] text-[#8B96A8]/50 leading-relaxed">
-            본 사이트에 기재된 절세 사례 및 수치 데이터는 이해를 돕기 위한 예시이며, 실제 결과와 다를 수 있습니다.
-            세무 처리 결과는 개인·법인의 상황에 따라 달라질 수 있으므로 반드시 전문가와 상담하시기 바랍니다.
+          <p className="text-xs text-[#8B96A8] leading-relaxed">
+            본 웹사이트는 랜딩페이지 기획 및 디자인 포트폴리오 목적으로 제작된 가상의 페이지입니다. 사이트 내 기재된 세무사 정보, 절세 사례, 수치 데이터 및 리뷰는 전환율 최적화(CRO) 구조를 보여주기 위해 연출된 가상의 콘텐츠이며 실제 서비스와 무관합니다.
           </p>
         </div>
       </div>

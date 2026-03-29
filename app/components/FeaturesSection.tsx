@@ -41,7 +41,7 @@ export default function FeaturesSection() {
     <section id="services" className="py-28 bg-[#F5F0E8]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <AnimatedSection animation="fade-up" className="text-center mb-16">
+        <AnimatedSection className="text-center mb-16">
           <p className="text-xs tracking-[0.3em] text-[#C9A84C] uppercase font-medium mb-4">
             핵심 서비스
           </p>
@@ -64,8 +64,7 @@ export default function FeaturesSection() {
           {services.map((svc, i) => (
             <AnimatedSection
               key={svc.title}
-              animation="fade-up"
-              delay={((i * 100) as 0 | 100 | 200 | 300 | 400 | 500)}
+              delay={i * 0.1}
             >
               <div className="bg-white rounded-sm p-8 shadow-sm card-premium h-full flex flex-col group">
                 {/* Tag */}

@@ -1,50 +1,31 @@
 'use client';
 
-import { useEffect, useRef, ReactNode } from 'react';
+import { useRef, ReactNode } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
-  animation?: 'fade-up' | 'fade-in';
-  delay?: 0 | 100 | 200 | 300 | 400 | 500;
-  threshold?: number;
+  delay?: number;
 }
 
 export default function AnimatedSection({
   children,
   className = '',
-  animation = 'fade-up',
   delay = 0,
-  threshold = 0.15,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add('in-view');
-          observer.unobserve(el);
-        }
-      },
-      { threshold }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  const delayClass = delay > 0 ? `delay-${delay}` : '';
+  const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={`animate-${animation} ${delayClass} ${className}`}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 1.2, ease: 'easeOut', delay }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

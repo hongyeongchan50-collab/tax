@@ -40,7 +40,7 @@ export default function SocialProofSection() {
     <section id="proof" className="py-28 bg-[#0D1B3E]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <AnimatedSection animation="fade-up" className="text-center mb-16">
+        <AnimatedSection className="text-center mb-16">
           <p className="text-xs tracking-[0.3em] text-[#C9A84C] uppercase font-medium mb-4">
             숫자로 증명합니다
           </p>
@@ -60,8 +60,7 @@ export default function SocialProofSection() {
           {counters.map((item, i) => (
             <AnimatedSection
               key={item.label}
-              animation="fade-up"
-              delay={((i * 100) as 0 | 100 | 200 | 300 | 400 | 500)}
+              delay={i * 0.1}
             >
               <div className="bg-[#0D1B3E] px-8 py-10 text-center">
                 <div
@@ -78,7 +77,7 @@ export default function SocialProofSection() {
         </div>
 
         {/* Section Sub Header */}
-        <AnimatedSection animation="fade-up" className="text-center mb-10">
+        <AnimatedSection className="text-center mb-10">
           <p className="text-xs tracking-[0.3em] text-[#C9A84C] uppercase font-medium mb-3">
             고객 성공 사례
           </p>
@@ -92,8 +91,7 @@ export default function SocialProofSection() {
           {cases.map((item, i) => (
             <AnimatedSection
               key={item.title}
-              animation="fade-up"
-              delay={((i * 100) as 0 | 100 | 200 | 300 | 400 | 500)}
+              delay={i * 0.1}
             >
               <div className="bg-[#1B2A4A] rounded-sm p-7 border border-[#C9A84C]/10 hover:border-[#C9A84C]/30 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
                 {/* Top row */}

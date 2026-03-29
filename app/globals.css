@@ -1,26 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Brand Colors */
-  --color-midnight: #0D1B3E;
-  --color-midnight-light: #1B2A4A;
-  --color-midnight-lighter: #243659;
+  /* Brand Colors - Light Theme */
   --color-gold: #C9A84C;
   --color-gold-light: #E8C87A;
   --color-gold-dark: #A8882E;
-  --color-cream: #F5F0E8;
-  --color-cream-dark: #EDE5D8;
-  --color-slate: #8B96A8;
-  --color-slate-light: #B0BAC9;
 
   /* Fonts */
-  --font-serif: var(--font-playfair), "Georgia", serif;
-  --font-sans: var(--font-geist-sans), "Arial", sans-serif;
+  --font-sans: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 
   /* Background / Foreground */
   --color-background: #ffffff;
-  --color-foreground: #171717;
+  --color-foreground: #0F172A;
 }
 
 /* Scroll behavior */
@@ -29,16 +21,11 @@ html {
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
+  background: #ffffff;
+  color: #0F172A;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Serif utility */
-.font-serif {
-  font-family: var(--font-serif);
 }
 
 /* Gold gradient text */
@@ -49,35 +36,6 @@ body {
   background-clip: text;
 }
 
-/* Subtle grid pattern for hero */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-/* Scroll animation states */
-.animate-fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.animate-fade-up.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.animate-fade-in {
-  opacity: 0;
-  transition: opacity 0.7s ease;
-}
-
-.animate-fade-in.in-view {
-  opacity: 1;
-}
-
 /* Gold divider */
 .divider-gold {
   width: 48px;
@@ -85,40 +43,40 @@ body {
   background: linear-gradient(90deg, #C9A84C, #E8C87A);
 }
 
-/* Card hover gold border */
+/* Card hover */
 .card-premium {
-  border: 1px solid transparent;
+  border: 1px solid #E2E8F0;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-premium:hover {
   border-color: rgba(201, 168, 76, 0.5);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Form input styles */
 .input-premium {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.25);
-  color: white;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .input-premium::placeholder {
-  color: rgba(139, 150, 168, 0.7);
+  color: #94A3B8;
 }
 
 .input-premium:focus {
   outline: none;
-  border-color: rgba(201, 168, 76, 0.7);
-  background: rgba(255, 255, 255, 0.12);
+  border-color: #C9A84C;
+  background: #ffffff;
 }
 
 /* Button styles */
 .btn-gold {
-  background: linear-gradient(135deg, #C9A84C 0%, #E8C87A 100%);
-  color: #0D1B3E;
+  background: linear-gradient(135deg, #A8882E 0%, #C9A84C 100%);
+  color: #ffffff;
   font-weight: 700;
   transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -130,20 +88,12 @@ body {
 }
 
 .btn-outline-gold {
-  border: 1.5px solid rgba(201, 168, 76, 0.7);
+  border: 1.5px solid #C9A84C;
   color: #C9A84C;
   background: transparent;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .btn-outline-gold:hover {
   background: rgba(201, 168, 76, 0.1);
-  border-color: #C9A84C;
 }
-
-/* Stagger delay utilities */
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-.delay-300 { transition-delay: 300ms; }
-.delay-400 { transition-delay: 400ms; }
-.delay-500 { transition-delay: 500ms; }
